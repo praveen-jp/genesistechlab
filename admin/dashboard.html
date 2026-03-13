@@ -307,7 +307,7 @@
       window.location.href = "admin-login.html";
       return;
     }
-
+    await user.getIdToken(true);
     // Show admin panel
     document.getElementById("admin-app").style.display = "flex";
     const name = user.displayName || user.email.split("@")[0];
