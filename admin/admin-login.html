@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login — Genesis Tech Lab</title>
+  <!-- No indexing -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-logo-wrap">
+    <div class="loader-logo-ring"></div>
+    <div class="loader-logo-inner">GTL</div>
+  </div>
+  <p class="loader-text">Loading Genesis Tech Lab<span class="loader-dots"><span>.</span><span>.</span><span>.</span></span></p>
+</div>
+
+<div class="login-page" style="justify-content:center">
+  <div class="login-bg"></div>
+
+  <div style="width:100%;max-width:440px;padding:24px;position:relative">
+    <div class="login-card">
+      <!-- Logo -->
+      <div class="login-logo">
+        <div class="login-logo-mark">GTL</div>
+        <div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;color:#fff">Genesis Tech Lab</div>
+          <div style="font-size:11px;color:var(--text-muted)">Admin Portal</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.15);border-radius:10px;padding:12px 16px;margin-bottom:24px;display:flex;gap:8px;align-items:flex-start">
+        <span style="font-size:14px">⚠️</span>
+        <p style="font-size:12px;color:#fca5a5;line-height:1.5">This is a restricted admin area. Unauthorized access is prohibited. This page is not linked from the main navigation.</p>
+      </div>
+
+      <h1 class="login-title">Admin Login</h1>
+      <p class="login-sub">Sign in with your administrator credentials to manage the platform.</p>
+
+      <div id="login-alert" class="alert alert-error" style="display:none"></div>
+
+      <form id="admin-login-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="admin-email">Admin Email</label>
+          <input type="email" id="admin-email" class="form-input" placeholder="your@email.com" required autocomplete="email" />
+          <div id="email-error" style="font-size:12px;color:#fca5a5;margin-top:5px;display:none"></div>
+        </div>
+        <div class="form-group" style="position:relative">
+          <label class="form-label" for="admin-password">Admin Password</label>
+          <input type="password" id="admin-password" class="form-input" placeholder="Your password" required autocomplete="current-password" style="padding-right:44px" />
+          <button type="button" id="toggle-pw" style="position:absolute;right:14px;top:38px;background:none;border:none;cursor:pointer;font-size:16px;color:var(--text-muted)">👁</button>
+          <div id="pw-error" style="font-size:12px;color:#fca5a5;margin-top:5px;display:none"></div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px" id="admin-login-btn">
+          Sign In as Admin
+        </button>
+      </form>
+
+      <p style="margin-top:20px;text-align:center;font-size:13px">
+        <a href="../index.html" style="color:var(--text-muted);text-decoration:none">← Back to main site</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, onAuthStateChanged }
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { firebaseConfig } from "../js/firebase-config.js";
+
+  const ADMIN_EMAILS = ["jessyadmin@genesistechlab.com"]; // Add your admin emails
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  onAuthStateChanged(auth, (user) => {
+    if (user && ADMIN_EMAILS.includes(user.email)) {
+      window.location.href = "dashboard.html";
+    }
+  });
+
+  document.getElementById("toggle-pw").addEventListener("click", () => {
+    const pw = document.getElementById("admin-password");
+    pw.type = pw.type === "password" ? "text" : "password";
+  });
+
+  document.getElementById("admin-login-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = document.getElementById("admin-email").value.trim();
+    const password = document.getElementById("admin-password").value;
+    const alert = document.getElementById("login-alert");
+    const btn = document.getElementById("admin-login-btn");
+    const emailErr = document.getElementById("email-error");
+    const pwErr = document.getElementById("pw-error");
+
+    alert.style.display = "none";
+    emailErr.style.display = "none";
+    pwErr.style.display = "none";
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailErr.textContent = "Please enter a valid email address.";
+      emailErr.style.display = "block";
+      return;
+    }
+
+    if (!password || password.length < 8) {
+      pwErr.textContent = "Password must be at least 8 characters.";
+      pwErr.style.display = "block";
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Verifying...";
+
+    try {
+      const cred = await signInWithEmailAndPassword(auth, email, password);
+      if (!ADMIN_EMAILS.includes(cred.user.email)) {
+        await auth.signOut();
+        throw { code: "auth/not-admin" };
+      }
+      btn.textContent = "✓ Access granted...";
+      window.location.href = "dashboard.html";
+    } catch (error) {
+      let msg = "Invalid email or password.";
+      if (error.code === "auth/not-admin") msg = "This account does not have admin privileges.";
+      else if (error.code === "auth/invalid-email") msg = "Please enter a valid email address.";
+      else if (error.code === "auth/too-many-requests") msg = "Too many attempts. Please try again later.";
+      alert.innerHTML = "⚠ " + msg;
+      alert.style.display = "flex";
+      btn.disabled = false;
+      btn.textContent = "Sign In as Admin";
+    }
+  });
+</script>
+
+<script>
+  setTimeout(() => {
+    const l = document.getElementById("page-loader");
+    if (l) l.classList.add("hidden");
+  }, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Genesis Tech Lab</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Logo  png.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Logo  png.png">
+</head>
+
+<body>
+
+  <div id="page-loader">
+    <div class="loader-logo-wrap">
+      <div class="loader-logo-ring"></div>
+      <div class="loader-logo-inner img"><img src="assets/images/WA Logo.jpg" alt="GTL"></div>
+    </div>
+    <p class="loader-text">Loading Genesis Tech Lab<span
+        class="loader-dots"><span>.</span><span>.</span><span>.</span></span></p>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-mark"><img src="assets/images/Logo  png.png" alt=""></div>
+        <div class="nav-brand-name">Genesis Tech Lab<span>Learning Community</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sessions.html">Sessions</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px">
+        <a href="login.html" class="btn btn-login-nav" id="nav-login-btn">Login</a>
+        <div class="nav-user-chip" id="nav-user-chip" style="display:none">
+          <div class="nav-user-avatar" id="nav-user-avatar">U</div>
+          <span class="nav-user-name" id="nav-user-name">Member</span>
+          <button class="btn-logout" id="btn-logout">Sign out</button>
+        </div>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="sessions.html">Sessions</a>
+    <a href="resources.html">Resources</a><a href="community.html">Community</a><a href="contact.html"
+      class="active">Contact</a>
+  </div>
+
+  <main class="page-main" id="page-content">
+
+    <div class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="section-inner">
+        <p class="section-label fade-up">Get In Touch</p>
+        <h1 class="section-title fade-up">Contact Us</h1>
+        <p class="section-subtitle fade-up">Have a question or want to reach out? We're here to help. Send us a message
+          and we'll respond as soon as possible.</p>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:20px">
+      <div class="section-inner">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px" id="contact-grid">
+
+          <!-- Contact Form -->
+          <div class="fade-up">
+            <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:8px">
+              Send a Message</h2>
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:28px">Fill out the form below and we'll get
+              back to you within 24 hours.</p>
+
+            <div id="form-alert" class="alert" style="display:none"></div>
+
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="How can we help?" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message</label>
+                <textarea id="contact-message" class="form-input" placeholder="Tell us more..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"
+                id="contact-submit">
+                Send Message →
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="fade-up">
+            <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:8px">
+              Other Ways to Reach Us</h2>
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:28px">Prefer a more direct conversation?
+              Reach us through these channels.</p>
+
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <a href="https://wa.me/your-whatsapp-number" target="_blank" rel="noopener"
+                style="display:flex;align-items:center;gap:16px;background:rgba(37,211,102,0.07);border:1px solid rgba(37,211,102,0.15);border-radius:14px;padding:20px 24px;text-decoration:none;transition:all 0.2s"
+                onmouseover="this.style.borderColor='#25D366'"
+                onmouseout="this.style.borderColor='rgba(37,211,102,0.15)'">
+                <div
+                  style="width:44px;height:44px;background:#25D366;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                </div>
+                <div>
+                  <div style="font-weight:600;color:#fff;margin-bottom:2px">WhatsApp</div>
+                  <div style="font-size:13px;color:var(--text-muted)">Chat with us directly — fastest response</div>
+                </div>
+              </a>
+
+              <a href="mailto:hello@genesistechlab.com"
+                style="display:flex;align-items:center;gap:16px;background:rgba(91,127,255,0.06);border:1px solid rgba(91,127,255,0.15);border-radius:14px;padding:20px 24px;text-decoration:none;transition:all 0.2s"
+                onmouseover="this.style.borderColor='var(--accent)'"
+                onmouseout="this.style.borderColor='rgba(91,127,255,0.15)'">
+                <div
+                  style="width:44px;height:44px;background:var(--accent);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px">
+                  ✉️</div>
+                <div>
+                  <div style="font-weight:600;color:#fff;margin-bottom:2px">Email</div>
+                  <div style="font-size:13px;color:var(--text-muted)">hello@genesistechlab.com</div>
+                </div>
+              </a>
+
+              <a href="https://instagram.com/genesistechlab" target="_blank"
+                style="display:flex;align-items:center;gap:16px;background:rgba(225,48,108,0.06);border:1px solid rgba(225,48,108,0.15);border-radius:14px;padding:20px 24px;text-decoration:none;transition:all 0.2s">
+                <div
+                  style="width:44px;height:44px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                  </svg>
+                </div>
+                <div>
+                  <div style="font-weight:600;color:#fff;margin-bottom:2px">Instagram</div>
+                  <div style="font-size:13px;color:var(--text-muted)">@genesistechlab</div>
+                </div>
+              </a>
+            </div>
+
+            <!-- FAQ quick links -->
+            <div
+              style="margin-top:32px;padding:24px;background:var(--bg-card2);border:1px solid var(--border);border-radius:14px">
+              <h3 style="font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:#fff;margin-bottom:14px">
+                Quick Questions</h3>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="font-size:13px;color:var(--text-muted)"><strong style="color:var(--accent)">How do I
+                    join?</strong> — Contact us on WhatsApp to get your membership credentials.</div>
+                <div style="font-size:13px;color:var(--text-muted)"><strong style="color:var(--accent)">Is it
+                    free?</strong> — Yes, Genesis Tech Lab is a free community learning platform.</div>
+                <div style="font-size:13px;color:var(--text-muted)"><strong style="color:var(--accent)">When are
+                    sessions?</strong> — Check WhatsApp group for session schedules.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom" style="border-top:none;padding-top:0">
+        <p style="color:var(--text-muted);font-size:13px">© 2026 Genesis Tech Lab. All rights reserved.</p>
+        <a href="index.html" style="font-size:13px;color:var(--accent);text-decoration:none">← Back to Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @media(max-width:768px) {
+      #contact-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { firebaseConfig } from "./js/firebase-config.js";
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        document.getElementById("nav-login-btn").style.display = "none";
+        document.getElementById("nav-user-chip").style.display = "flex";
+        const n = user.displayName || user.email.split("@")[0];
+        document.getElementById("nav-user-name").textContent = n;
+        document.getElementById("nav-user-avatar").textContent = n.charAt(0).toUpperCase();
+      }
+    });
+    document.getElementById("btn-logout")?.addEventListener("click", async () => { await signOut(auth); window.location.reload(); });
+
+    // Contact form
+    document.getElementById("contact-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById("contact-submit");
+      const alert = document.getElementById("form-alert");
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+      await new Promise(r => setTimeout(r, 1000));
+      alert.className = "alert alert-success";
+      alert.innerHTML = "✓ Message sent! We'll get back to you within 24 hours.";
+      alert.style.display = "flex";
+      e.target.reset();
+      btn.disabled = false;
+      btn.textContent = "Send Message →";
+    });
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

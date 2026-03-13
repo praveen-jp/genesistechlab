@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources — Genesis Tech Lab</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Logo  png.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Logo  png.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@v13/font/simple-icons.min.css">
+</head>
+
+<body>
+
+  <div id="page-loader">
+    <div class="loader-logo-wrap">
+      <div class="loader-logo-ring"></div>
+      <div class="loader-logo-inner img"><img src="assets/images/WA Logo.jpg" alt="GTL"></div>
+    </div>
+    <p class="loader-text">Loading Genesis Tech Lab<span
+        class="loader-dots"><span>.</span><span>.</span><span>.</span></span></p>
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-logo-mark"><img src="assets/images/Logo  png.png" alt=""></div>
+        <div class="nav-brand-name">Genesis Tech Lab<span>Learning Community</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sessions.html">Sessions</a></li>
+        <li><a href="resources.html" class="active">Resources</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px">
+        <a href="login.html" class="btn btn-login-nav" id="nav-login-btn">Login</a>
+        <div class="nav-user-chip" id="nav-user-chip" style="display:none">
+          <div class="nav-user-avatar" id="nav-user-avatar">U</div>
+          <span class="nav-user-name" id="nav-user-name">Member</span>
+          <button class="btn-logout" id="btn-logout">Sign out</button>
+        </div>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="sessions.html">Sessions</a>
+    <a href="resources.html" class="active">Resources</a><a href="community.html">Community</a><a
+      href="contact.html">Contact</a>
+  </div>
+
+  <main class="page-main" id="page-content">
+
+    <div class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="section-inner">
+        <p class="section-label fade-up">Curated Resources</p>
+        <h1 class="section-title fade-up">Learning Resources</h1>
+        <p class="section-subtitle fade-up">A hand-picked collection of tools, platforms, and resources recommended by
+          Genesis Tech Lab for every member.</p>
+      </div>
+    </div>
+
+    <!-- AI TOOLS -->
+    <section class="section" style="padding-top:20px">
+      <div class="section-inner">
+        <div class="fade-up" style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+          <div
+            style="width:40px;height:40px;background:rgba(91,127,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px">
+            Ai</div>
+          <div>
+            <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff">AI Tools</h2>
+            <p style="font-size:13px;color:var(--text-muted)">Essential AI tools every member should explore</p>
+          </div>
+        </div>
+        <div class="resource-grid fade-up">
+          <a href="https://chat.openai.com" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-openai"></i>
+            </div>
+            <div>
+              <div class="resource-name">ChatGPT</div>
+              <div class="resource-type">AI Chatbot</div>
+            </div>
+          </a>
+          <a href="https://canva.com" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-canva"></i>
+            </div>
+            <div>
+              <div class="resource-name">Canva</div>
+              <div class="resource-type">AI Design Tool</div>
+            </div>
+          </a>
+          <a href="https://notion.so" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-notion"></i>
+            </div>
+            <div>
+              <div class="resource-name">Notion AI</div>
+              <div class="resource-type">AI Productivity</div>
+            </div>
+          </a>
+          <a href="https://perplexity.ai" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-perplexity"></i>
+            </div>
+            <div>
+              <div class="resource-name">Perplexity</div>
+              <div class="resource-type">AI Search</div>
+            </div>
+          </a>
+          <a href="https://claude.ai" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-claude"></i>
+            </div>
+            <div>
+              <div class="resource-name">Claude</div>
+              <div class="resource-type">AI Assistant</div>
+            </div>
+          </a>
+          <a href="https://gemini.google.com" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                <path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" fill="#8E75FF" />
+              </svg>
+            </div>
+            <div>
+              <div class="resource-name">Gemini</div>
+              <div class="resource-type">Google AI</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- LEARNING PLATFORMS -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="fade-up" style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+          <div
+            style="width:40px;height:40px;background:rgba(91,127,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6h18" />
+              <path d="M3 12h18" />
+              <path d="M3 18h18" />
+              <path d="M5 4v16" />
+              <path d="M19 4v16" />
+            </svg>
+          </div>
+          <div>
+            <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff">Learning Platforms
+            </h2>
+            <p style="font-size:13px;color:var(--text-muted)">Free and premium platforms to deepen your learning</p>
+          </div>
+        </div>
+        <div class="resource-grid fade-up">
+          <a href="https://freecodecamp.org" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-freecodecamp"></i>
+            </div>
+            <div>
+              <div class="resource-name">freeCodeCamp</div>
+              <div class="resource-type">Free Coding</div>
+            </div>
+          </a>
+          <a href="https://w3schools.com" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-w3schools"></i>
+            </div>
+            <div>
+              <div class="resource-name">W3Schools</div>
+              <div class="resource-type">Web Reference</div>
+            </div>
+          </a>
+          <a href="https://coursera.org" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-coursera"></i>
+            </div>
+            <div>
+              <div class="resource-name">Coursera</div>
+              <div class="resource-type">Online Courses</div>
+            </div>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-youtube"></i>
+            </div>
+            <div>
+              <div class="resource-name">YouTube</div>
+              <div class="resource-type">Video Learning</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CODING TOOLS -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="fade-up" style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+          <div
+            style="width:40px;height:40px;background:rgba(91,127,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="8 6 3 12 8 18" />
+              <polyline points="16 6 21 12 16 18" />
+            </svg>
+          </div>
+          <div>
+            <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff">Coding Tools</h2>
+            <p style="font-size:13px;color:var(--text-muted)">The developer's essential toolkit</p>
+          </div>
+        </div>
+        <div class="resource-grid fade-up">
+          <a href="https://code.visualstudio.com" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                <path d="M17.5 3 L22 5.5 V18.5 L17.5 21 L9 14 L4 17 L2 15 L6.5 12 L2 9 L4 7 L9 10 Z" fill="#007ACC" />
+              </svg>
+            </div>
+            <div>
+              <div class="resource-name">VS Code</div>
+              <div class="resource-type">Code Editor</div>
+            </div>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-github"></i>
+            </div>
+            <div>
+              <div class="resource-name">GitHub</div>
+              <div class="resource-type">Version Control</div>
+            </div>
+          </a>
+          <a href="https://codepen.io" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-codepen"></i>
+            </div>
+            <div>
+              <div class="resource-name">CodePen</div>
+              <div class="resource-type">Online Editor</div>
+            </div>
+          </a>
+          <a href="https://vercel.com" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-vercel"></i>
+            </div>
+            <div>
+              <div class="resource-name">Vercel</div>
+              <div class="resource-type">Deployment</div>
+            </div>
+          </a>
+          <a href="https://firebase.google.com" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-firebase"></i>
+            </div>
+            <div>
+              <div class="resource-name">Firebase</div>
+              <div class="resource-type">Backend</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PRODUCTIVITY -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="fade-up" style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+          <div
+            style="width:40px;height:40px;background:rgba(91,127,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10" />
+            </svg>
+          </div>
+          <div>
+            <h2 style="font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff">Productivity & Design
+            </h2>
+            <p style="font-size:13px;color:var(--text-muted)">Tools to create, organize, and produce</p>
+          </div>
+        </div>
+        <div class="resource-grid fade-up">
+          <a href="https://figma.com" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-figma"></i>
+            </div>
+            <div>
+              <div class="resource-name">Figma</div>
+              <div class="resource-type">UI Design</div>
+            </div>
+          </a>
+          <a href="https://notion.so" target="_blank" rel="noopener" class="resource-item">
+            <div class="resource-icon">
+              <i class="si si-notion"></i>
+            </div>
+            <div>
+              <div class="resource-name">Notion</div>
+              <div class="resource-type">Notes & Docs</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bottom" style="border-top:none;padding-top:0">
+        <p style="color:var(--text-muted);font-size:13px">© 2026 Genesis Tech Lab. All rights reserved.</p>
+        <a href="index.html" style="font-size:13px;color:var(--accent);text-decoration:none">← Back to Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { firebaseConfig } from "./js/firebase-config.js";
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        document.getElementById("nav-login-btn").style.display = "none";
+        document.getElementById("nav-user-chip").style.display = "flex";
+        const n = user.displayName || user.email.split("@")[0];
+        document.getElementById("nav-user-name").textContent = n;
+        document.getElementById("nav-user-avatar").textContent = n.charAt(0).toUpperCase();
+      }
+    });
+    document.getElementById("btn-logout")?.addEventListener("click", async () => { await signOut(auth); window.location.reload(); });
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
