@@ -70,8 +70,7 @@
               <input type="checkbox" id="remember-me" style="accent-color:var(--accent)" />
               Remember me
             </label>
-            <!-- <a href="#"  style="font-size:13px;color:var(--accent);text-decoration:none"></a> -->
-            <button  id="forgot-pw-link">Forgot password?</button>
+            <a href="#" id="forgot-pw-link" style="font-size:13px;color:var(--accent);text-decoration:none">Forgot password?</a>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="login-btn">
@@ -145,8 +144,8 @@
   <!-- SCRIPTS -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged }
-      from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail }
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
     import { firebaseConfig } from "./js/firebase-config.js";
 
     const app = initializeApp(firebaseConfig);
@@ -160,6 +159,29 @@
       }
     });
 
+    // Forgot password
+  document.getElementById("forgot-pw-link").addEventListener("click", async (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    const alert = document.getElementById("login-alert");
+    if (!email) {
+      alert.className = "alert alert-error";
+      alert.innerHTML = "⚠ Enter your email address above first, then click Forgot password.";
+      alert.style.display = "flex";
+      return;
+    }
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert.className = "alert alert-success";
+      alert.innerHTML = "✓ Password reset email sent! Ask the member to check their inbox.";
+      alert.style.display = "flex";
+    } catch (err) {
+      alert.className = "alert alert-error";
+      alert.innerHTML = "⚠ Could not send reset email. Make sure the email is registered.";
+      alert.style.display = "flex";
+    }
+  });
+    
     // Toggle password visibility
     document.getElementById("toggle-password").addEventListener("click", () => {
       const pw = document.getElementById("password");
