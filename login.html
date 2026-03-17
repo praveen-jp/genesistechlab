@@ -142,6 +142,10 @@
   </div>
 
   <!-- SCRIPTS -->
+    <script type="module">
+  import { initProfile } from "./js/profile.js";
+  initProfile();
+</script>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
     import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail }
@@ -245,11 +249,8 @@
       }
     });
   </script>
+
   <script type="module">
-  import { initProfile } from "./js/profile.js";
-  initProfile();
-</script>
-  <!-- <script type="module">
     setTimeout(() => {
       const loader = document.getElementById("page-loader");
       if (loader) loader.classList.add("hidden");
@@ -276,7 +277,7 @@ document.getElementById("forgot-pw-link").addEventListener("click", async (e) =>
     alert.style.display = "flex";
   }
 });
-  </script> -->
+  </script>
 
 </body>
 
