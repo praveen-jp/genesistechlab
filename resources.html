@@ -329,22 +329,9 @@
   </footer>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-    import { firebaseConfig } from "./js/firebase-config.js";
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        document.getElementById("nav-login-btn").style.display = "none";
-        document.getElementById("nav-user-chip").style.display = "flex";
-        const n = user.displayName || user.email.split("@")[0];
-        document.getElementById("nav-user-name").textContent = n;
-        document.getElementById("nav-user-avatar").textContent = n.charAt(0).toUpperCase();
-      }
-    });
-    document.getElementById("btn-logout")?.addEventListener("click", async () => { await signOut(auth); window.location.reload(); });
-  </script>
+  import { initProfile } from "./js/profile.js";
+  initProfile();
+</script>
   <script type="module" src="js/main.js"></script>
 </body>
 
