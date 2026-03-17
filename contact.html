@@ -199,38 +199,9 @@
   </style>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-    import { firebaseConfig } from "./js/firebase-config.js";
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        document.getElementById("nav-login-btn").style.display = "none";
-        document.getElementById("nav-user-chip").style.display = "flex";
-        const n = user.displayName || user.email.split("@")[0];
-        document.getElementById("nav-user-name").textContent = n;
-        document.getElementById("nav-user-avatar").textContent = n.charAt(0).toUpperCase();
-      }
-    });
-    document.getElementById("btn-logout")?.addEventListener("click", async () => { await signOut(auth); window.location.reload(); });
-
-    // Contact form
-    document.getElementById("contact-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const btn = document.getElementById("contact-submit");
-      const alert = document.getElementById("form-alert");
-      btn.disabled = true;
-      btn.textContent = "Sending...";
-      await new Promise(r => setTimeout(r, 1000));
-      alert.className = "alert alert-success";
-      alert.innerHTML = "✓ Message sent! We'll get back to you within 24 hours.";
-      alert.style.display = "flex";
-      e.target.reset();
-      btn.disabled = false;
-      btn.textContent = "Send Message →";
-    });
-  </script>
+  import { initProfile } from "./js/profile.js";
+  initProfile();
+</script>
   <script type="module" src="js/main.js"></script>
 </body>
 
