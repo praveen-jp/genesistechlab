@@ -38,11 +38,14 @@
       </ul>
       <div style="display:flex;align-items:center;gap:12px">
         <a href="login.html" class="btn btn-login-nav" id="nav-login-btn">Login</a>
-        <div class="nav-user-chip" id="nav-user-chip" style="display:none">
-          <div class="nav-user-avatar" id="nav-user-avatar">U</div>
-          <span class="nav-user-name" id="nav-user-name">Member</span>
-          <button class="btn-logout" id="btn-logout">Sign out</button>
-        </div>
+        <div class="profile-dropdown-wrap nav-user-chip" id="nav-user-chip" style="display:none">
+  <div class="nav-user-avatar" id="nav-user-avatar" style="cursor:pointer">U</div>
+  <span class="nav-user-name" id="nav-user-name">Member</span>
+  <button class="nav-menu-dots" id="nav-menu-btn" aria-label="Account menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="profile-dropdown" id="profile-dropdown"></div>
+</div>
         <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
       </div>
     </div>
