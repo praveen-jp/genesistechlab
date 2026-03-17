@@ -199,52 +199,52 @@
 
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
-  //     const alert = document.getElementById("login-alert");
-  //     const emailErr = document.getElementById("email-error");
-  //     const pwErr = document.getElementById("password-error");
-  //     const btn = document.getElementById("login-btn");
+      const alert = document.getElementById("login-alert");
+      const emailErr = document.getElementById("email-error");
+      const pwErr = document.getElementById("password-error");
+      const btn = document.getElementById("login-btn");
 
-  //     // Reset errors
-  //     alert.style.display = "none";
-  //     emailErr.style.display = "none";
-  //     pwErr.style.display = "none";
+      // Reset errors
+      alert.style.display = "none";
+      emailErr.style.display = "none";
+      pwErr.style.display = "none";
 
-  //     let valid = true;
+      let valid = true;
 
-  //     if (!email || !isValidEmail(email)) {
-  //       emailErr.textContent = "Please enter a valid email address.";
-  //       emailErr.style.display = "block";
-  //       valid = false;
-  //     }
+      if (!email || !isValidEmail(email)) {
+        emailErr.textContent = "Please enter a valid email address.";
+        emailErr.style.display = "block";
+        valid = false;
+      }
 
-  //     if (!password || password.length < 8) {
-  //       pwErr.textContent = "Password must be at least 8 characters.";
-  //       pwErr.style.display = "block";
-  //       valid = false;
-  //     }
+      if (!password || password.length < 8) {
+        pwErr.textContent = "Password must be at least 8 characters.";
+        pwErr.style.display = "block";
+        valid = false;
+      }
 
-  //     if (!valid) return;
+      if (!valid) return;
 
-  //     btn.disabled = true;
-  //     btn.textContent = "Signing in...";
+      btn.disabled = true;
+      btn.textContent = "Signing in...";
 
-  //     try {
-  //       await signInWithEmailAndPassword(auth, email, password);
-  //       btn.textContent = "✓ Success! Redirecting...";
-  //       // redirect handled by onAuthStateChanged
-  //     } catch (error) {
-  //       let message = "Invalid email or password.";
-  //       if (error.code === "auth/invalid-email") message = "Please enter a valid email address.";
-  //       else if (error.code === "auth/too-many-requests") message = "Too many failed attempts. Please try again later.";
-  //       else if (error.code === "auth/user-disabled") message = "This account has been disabled. Please contact admin.";
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        btn.textContent = "✓ Success! Redirecting...";
+        // redirect handled by onAuthStateChanged
+      } catch (error) {
+        let message = "Invalid email or password.";
+        if (error.code === "auth/invalid-email") message = "Please enter a valid email address.";
+        else if (error.code === "auth/too-many-requests") message = "Too many failed attempts. Please try again later.";
+        else if (error.code === "auth/user-disabled") message = "This account has been disabled. Please contact admin.";
 
-  //       alert.innerHTML = "⚠ " + message;
-  //       alert.style.display = "flex";
-  //       btn.disabled = false;
-  //       btn.textContent = "Sign In";
-  //     }
-  //   });
-  // </script>
+        alert.innerHTML = "⚠ " + message;
+        alert.style.display = "flex";
+        btn.disabled = false;
+        btn.textContent = "Sign In";
+      }
+    });
+  </script>
   <script type="module">
   import { initProfile } from "./js/profile.js";
   initProfile();
